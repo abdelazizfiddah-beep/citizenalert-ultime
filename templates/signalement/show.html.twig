@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <h1>{{ signalement.titre }}</h1>
+        </div>
+        <div class="card-body">
+            <p><strong>Type :</strong> {{ signalement.type }}</p>
+            <p><strong>Description :</strong> {{ signalement.description }}</p>
+            <p><strong>Auteur :</strong> {{ signalement.auteur.email }}</p>
+            <a href="{{ path('app_signalement_index') }}" class="btn btn-secondary">Retour à la liste</a>
+        </div>
+    </div>
+{% endblock %}

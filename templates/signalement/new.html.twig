@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Signaler un incident</h1>
+    {{ form_start(form) }}
+        {{ form_widget(form, {'attr': {'class': 'form-control'}}) }}
+        <button type="submit" class="btn btn-primary mt-3">Envoyer l'alerte</button>
+    {{ form_end(form) }}
+{% endblock %}

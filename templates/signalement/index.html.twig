@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des alertes</h1>
+    <a href="{{ path('app_signalement_new') }}" class="btn btn-primary mb-3">Nouvelle alerte</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in signalements %}
+            <tr>
+                <td>{{ s.titre }}</td>
+                <td>{{ s.type }}</td>
+                <td>
+                    <a href="{{ path('app_signalement_show', {'id': s.id}) }}" class="btn btn-sm btn-info">Voir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

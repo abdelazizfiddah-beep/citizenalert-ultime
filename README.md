@@ -1,25 +1,26 @@
 # CitizenAlert Ultime
 
-Plateforme signalements citoyens Symfony 7 + MySQL Docker.
+Plateforme signalements citoyens - Symfony 7 + MySQL Docker
 
-## Features
-- Entity Signalement (titre, description, lat/lng, type)
-- Enum TypeSignalement (dechet, accident, incivilité, vol, voirie)
-- Repository custom (findByLatest, findByType)
+## Fonctionnalités actuelles
+- Signalement (titre, description, position GPS, type)
+- Types: déchet, accident, incivilité, vol, voirie
+- Repository personnalisé (liste récente, filtre type)
 
-## Status
-✅ Backend complet + DB migrations
-⏳ Formulaire création + carte Leaflet
+## Structure DB
 
-## Local setup
+## Installation locale
 ```bash
 git clone https://github.com/abdelazizfiddah-beep/citizenalert-ultime.git
 cd citizenalert-ultime
 docker compose up -d
 composer install
-cp .env .env.local  
+cp .env .env.local
 php bin/console doctrine:migrations:migrate
 symfony serve
 ```
 
-## DB
+## Prochaines étapes
+- Formulaire création signalement
+- Carte interactive Leaflet
+- Liste + filtres
